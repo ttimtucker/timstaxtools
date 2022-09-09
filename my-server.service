@@ -1,0 +1,17 @@
+[Unit]
+Description=Flask Web Application Server using Gunicorn
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/hub
+Environment="PATH=/home/ubuntu/hub/venv/bin"
+ExecStart=/bin/bash -c 'source /home/ubuntu/hub/venv/bin/activate; /home/ubuntu/hub/venv/bin/gunicorn -c /home/ubuntu/hub/gunicorn.conf.py wsgi:app'
+#ExecStart=/bin/bash -c 'source /home/ubuntu/hub/venv/bin/activate; /home/ubuntu/hub/venv/bin/gunicorn -w 1 --bind 0.0.0.0:5000 --log-level=debug wsgi:app'
+#ExecStart=/bin/bash -c 'source /home/ubuntu/hub/venv/bin/activate; /home/ubuntu/hub/venv/bin/gunicorn -w 1 --bind 0.0.0.0:5000 wsgi:app --error-logfile /var/log/gunicorn/error.log --access-logfile /var/log/gunicorn/access.log --capture-output --log-level debug'
+#ExecStart=/bin/bash -c 'source /home/ubuntu/hub/venv/bin/activate; /home/ubuntu/hub/venv/bin/gunicorn -w 1 --bind unix:/home/ubuntu/my-server/ipc.sock wsgi:app'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
