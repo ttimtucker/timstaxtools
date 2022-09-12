@@ -165,7 +165,6 @@ def get_stats(email,  password):
     # authentication_data is a dictionary that is sent with GET/POST requests to authenticate.
     # Need to first set the email and password within authentication_data
     gyr.authentication_data['user[email]'] = email 
-    password='1H@tetax3s!' # Temporary, to avoid having to enter correct password
     gyr.authentication_data['user[password]'] = password
     
     with requests.session() as s:

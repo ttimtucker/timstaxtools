@@ -7,7 +7,6 @@ urls = {
 
 
 # email = 'ttimtucker@gmail.com'
-# password = '1H@tetax3s!'
 
 authentication_data = {
     'authenticity_token': 'jNDhzTzFdrfHkIDC-YOtnGD-p2_LRNuruw1IiS9rqt_EDmLrNJAOG-28vWoAPn9EuYYh8rdbTa1-dPqdGvqE4g',
